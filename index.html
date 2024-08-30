@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes Profesional</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 30%;
+            max-width: 300px;
+            height: 100vh;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+            overflow-y: auto;
+        }
+        .sidebar h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #555;
+        }
+        .gallery-container {
+            margin-left: 30%;
+            width: 60%;
+            max-width: 800px;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 15px;
+        }
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+        .gallery-item h2 {
+            position: absolute;
+            bottom: 40px;
+            left: 20px;
+            color: #fff;
+            margin: 0;
+            font-size: 1.5em;
+            z-index: 2;
+        }
+        .gallery-item .description {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            color: #fff;
+            margin: 0;
+            font-size: 1em;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .gallery-item:hover .description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Imágenes Disponibles</h2>
+        <a href="#img1">Título Imagen 1</a>
+        <a href="#img2">Título Imagen 2</a>
+        <a href="#img3">Título Imagen 3</a>
+        <a href="#img4">Título Imagen 4</a>
+        <a href="#img5">Título Imagen 5</a>
+        <a href="#img6">Título Imagen 6</a>
+        <a href="#img7">Título Imagen 7</a>
+        <a href="#img8">Título Imagen 8</a>
+        <a href="#img8">Título Imagen 8</a>
+        <a href="#img8">Título Imagen 8</a>
+        <a href="#img8">Título Imagen 8</a>
+         <a href="#img8">Título Imagen 8</a>
+    </div>
+
+    <div class="gallery-container">
+        <h1>Galería de Imágenes</h1>
+        <div class="gallery">
+            <div class="gallery-item" id="img1" onclick="location.href='pagina1.html'">
+                <img src="img.jpg" alt="Imagen 1">
+                <h2>Título Imagen 1</h2>
+                <p class="description">Esta es una descripción detallada de la Imagen 1.</p>
+            </div>
+            <div class="gallery-item" id="img2" onclick="location.href='pagina1.html'">
+                <img src="img.jpg" alt="Imagen 2">
+                <h2>Título Imagen 2</h2>
+                <p class="description">Esta es una descripción detallada de la Imagen 2.</p>
+            </div>
+            <div class="gallery-item" id="img3" onclick="location.href='pagina1.html'">
+                <img src="img.jpg" alt="Imagen 3">
+                <h2>Título Imagen 3</h2>
+                <p class="description">Esta es una descripción detallada de la Imagen 3.</p>
+            </div>
+            <div class="gallery-item" id="img4" onclick="location.href='pagina1.html'">
+                <img src="img.jpg" alt="Imagen 4">
+                <h2>Título Imagen 4</h2>
+                <p class="description">Esta es una descripción detallada de la Imagen 4.</p>
+            </div>
+            <div class="gallery-item" id="img5" onclick="location.href='pagina1.html'">
+                <img src="img.jpg" alt="Imagen 5">
+                <h2>Título Imagen 5</h2>
+                <p class="description">Esta es una descripción detallada de la Imagen 5.</p>
+            </div>
+            <div class="gallery-item" id="img6" onclick="location.href='pagina1.html'">
+                <img src="img.jpg" alt="Imagen 6">
+                <h2>Título Imagen 6</h2>
+                <p class="description">Esta es una descripción detallada de la Imagen 6.</p>
+            </div>
+            <div class="gallery-item" id="img7" onclick="location.href='pagina1.html'">
+                <img src="img.jpg" alt="Imagen 7">
+                <h2>Título Imagen 7</h2>
+                <p class="description">Esta es una descripción detallada de la Imagen 7.</p>
+            </div>
+            <div class="gallery-item" id="img8" onclick="location.href='pagina1.html'">
+                <img src="img.jpg" alt="Imagen 8">
+                <h2>Título Imagen 8</h2>
+                <p class="description">Esta es una descripción detallada de la Imagen 8.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
